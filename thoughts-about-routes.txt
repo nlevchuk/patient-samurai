@@ -1,0 +1,18 @@
+Thoughts about routes:
+
+Option 1
+  [:METHOD :PATH :HANDLER]
+ 
+Option 2:
+  (:METHOD :PATH :HANDLER)
+ 
+Option 3:
+  {:METHOD :PATH :HANDLER}
+
+Signature fn
+  (defroutes NAME [& dispatchers]) => handler
+
+
+
+(def routes () () ())
+(def routes [] [] [])
