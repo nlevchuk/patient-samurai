@@ -20,7 +20,7 @@ jobs:
         java-version: '8'
 
     - name: Install Clojure CLI
-      uses: ./
+      uses: DeLaGuardo/setup-clojure@9.5
       with:
         cli: 1.11.1
 
