@@ -23,14 +23,28 @@ Sublime Text 4 with installed Clojure (Sublimed) package
 
 ## Installation
 
+### Development
+
+Run in 1st terminal tab:
 ```
-lein repl
+clj -M:dev-client
+```
+
+Run in 2nd terminal tab:
+```
+clj -M:dev-repl
+```
+
+### Production
+
+```
+sh scripts/package.sh
 ```
 
 ## Tests
 
 ```
-lein test
+sh scripts/test.sh
 ```
 
 ## Deployment

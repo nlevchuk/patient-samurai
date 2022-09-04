@@ -1,0 +1,5 @@
+^{:open-url false}
+{:main patient-samurai.client
+ :output-to "target/resources/public/main.js"
+ :output-dir "target/resources/public/out"
+ :optimizations :none}

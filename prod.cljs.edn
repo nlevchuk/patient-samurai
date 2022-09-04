@@ -1,0 +1,4 @@
+{:main patient-samurai.client
+ :output-to "target/uberjar/public/main.js"
+ :output-dir "target/resources/public/out"
+ :optimizations :advanced}
