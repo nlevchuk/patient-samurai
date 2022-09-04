@@ -22,7 +22,7 @@ jobs:
     - name: Install Clojure CLI
       uses: DeLaGuardo/setup-clojure@9.5
       with:
-        cli: 1.11.1
+        cli: 1.11.1.1155
 
     - name: Run tests
       run: sh scripts/test.sh
