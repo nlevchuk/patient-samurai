@@ -1,0 +1,22 @@
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #e1e1e1;
+  border-collapse: collapse;
+}
+
+table th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
