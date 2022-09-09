@@ -1,9 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
 ## Unreleased
 
-- Install html and postgresql libraries. Display patient list on index page
+- Setup database migrations. Write some tests for it
+- Display patient list on index page
 - Add create/edit patient page. Add delete action
 - Add filtering and sorting of patient list
 - Add tests for key parts of the application (integration tests)
@@ -15,3 +17,5 @@ All notable changes to this project will be documented in this file.
 ## Added
 
 - Create lein project, run web server (ring-jetty-adapter) and set up CI
+- Replace Leiningen to CLI tools
+- Install clojurescript and postgresql libraries

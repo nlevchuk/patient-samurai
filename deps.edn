@@ -1,9 +1,11 @@
-{:deps {org.clojure/clojure       {:mvn/version "1.11.1"}
-        ring/ring-core            {:mvn/version "1.9.5"}
-        ring/ring-jetty-adapter   {:mvn/version "1.9.5"}
-        ring/ring-defaults        {:mvn/version "0.3.3"}
-        compojure/compojure       {:mvn/version "1.7.0"}
-        rum/rum                   {:mvn/version "0.12.9"}}
+{:deps {org.clojure/clojure               {:mvn/version "1.11.1"}
+        ring/ring-core                    {:mvn/version "1.9.5"}
+        ring/ring-jetty-adapter           {:mvn/version "1.9.5"}
+        ring/ring-defaults                {:mvn/version "0.3.3"}
+        compojure/compojure               {:mvn/version "1.7.0"}
+        rum/rum                           {:mvn/version "0.12.9"}
+        com.github.seancorfield/next.jdbc {:mvn/version "1.2.796"}
+        org.postgresql/postgresql         {:mvn/version "42.4.2"}}
 
  :paths ["src" "resources"]
  
@@ -14,6 +16,7 @@
                 :main-opts  ["--main"  "figwheel.main"
                              "--build" "dev"
                              "--repl"]}
+
   :dev-repl    {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}}
                 :extra-paths ["target/resources"]
                 :main-opts  ["--main" "nrepl.cmdline"
@@ -30,7 +33,9 @@
                              com.bhauman/figwheel-main {:mvn/version "0.2.18"}}
                 :main-opts  ["--main"  "figwheel.main"
                              "--build-once" "prod"]}
+
   :uberjar     {:extra-paths ["classes" "target/uberjar"]}
+
   :package     {:extra-deps  {uberdeps/uberdeps {:mvn/version "1.1.4"}}
                 :main-opts   ["--main"  "uberdeps.uberjar"
                               "--deps-file" "deps.edn"

@@ -23,6 +23,24 @@ Sublime Text 4 with installed Clojure (Sublimed) package
 
 ## Installation
 
+Add `PATIENT_SAMURAI_DB_URL` environment variable to connect to PostgreSQL server
+
+```
+jdbc:postgresql://localhost:5432/patient_samurai?user=USERNAME&password=PASSWORD
+```
+
+### Database migrations
+
+Create migration file
+```
+sh scripts/create-migration.sh NAME
+```
+
+Apply migrations
+```
+sh scripts/apply-migrations.sh
+```
+
 ### Development
 
 Run in 1st terminal tab:

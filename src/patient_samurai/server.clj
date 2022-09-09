@@ -12,7 +12,7 @@
           :fname "Roman"
           :mname "Andreevich"
           :lname "Suteev"
-          :sex "Male"
+          :gender "Male"
           :birth-date "2000-01-03"
           :address {:country "Montenegro"
                     :city "Budva"
@@ -23,7 +23,7 @@
           :fname "Olga"
           :mname "Fedorovna"
           :lname "Dostoevskaya"
-          :sex "Female"
+          :gender "Female"
           :birth-date "1995-05-24"
           :address {:country "Montenegro"
                     :city "Tivat"
@@ -35,10 +35,10 @@
   (str country ", " city ", " street " " number))
 
 (rum/defc patient-row [patient]
-  (let [{:keys [id fname mname lname sex birth-date address insurance]} patient]
+  (let [{:keys [id fname mname lname gender birth-date address insurance]} patient]
     [:tr {:key id}
       [:td (str fname " " mname " " lname)]
-      [:td sex]
+      [:td gender]
       [:td birth-date]
       [:td (format-address address)]
       [:td insurance]]))
@@ -52,7 +52,7 @@
       [:thead
        [:tr
         [:th "Full Name"]
-        [:th "Sex"]
+        [:th "Gender"]
         [:th "Birth Date"]
         [:th "Address"]
         [:th "Insurance Number"]]]
