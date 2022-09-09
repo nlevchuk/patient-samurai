@@ -1,0 +1,43 @@
+(ns patient-samurai.db
+  (:require
+    [clojure.java.io :as io]
+    [clojure.edn :as edn]))
+
+(defn get-db-spec-from-file []
+  (let [spec-file (io/resource "db.edn")]
+    (if spec-file
+      (edn/read-string (slurp spec-file))
+      {})))
+
+(get-db-spec-from-file)
+
+
+
+(def env-vars-map
+  {:dbname   "PATIENT_SAMURAI_DB_NAME"
+   :user 	   "PATIENT_SAMURAI_DB_USER"
+   :password "PATIENT_SAMURAI_DB_PASSWORD"
+   :host 	   "PATIENT_SAMURAI_DB_HOST"
+   :port 	   "PATIENT_SAMURAI_DB_PORT"})
+
+(defn get-db-spec-from-env []
+  (letfn [(f [[k env]] (vector k (System/getenv env)))]
+    (into {} (map f env-vars-map))))
+
+(get-db-spec-from-env)
+
+
+
+(defn not-null-values [coll]
+  (into {} (filter val (coll))))
+
+(defn merge-specs []
+  (let [spec-from-env (not-null-values get-db-spec-from-env)
+        spec-from-file (not-null-values get-db-spec-from-file)]
+    (into {} spec-from-file spec-from-env)))
+
+(def db-spec
+  {:dbtype "postgresql"
+   :dbname ""
+   :user ""
+   :password ""}))
