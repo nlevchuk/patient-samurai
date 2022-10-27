@@ -11,7 +11,7 @@ Features are:
 - Update patient
 - Delete patient
 
-## Stack
+## Technical stack
 
 - Clojure
 - ClojureScript
